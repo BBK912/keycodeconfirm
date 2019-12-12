@@ -7,9 +7,14 @@
   margin: 60px auto;
 }</style></head>
 <body>
+  <button onclick="fullscreen()"></button>
 <div id="keycode"></div>
 <script >
- let ele = document.getElementById('keycode');
+   let ele = document.getElementById('keycode');
+
+  function fullscreen() {
+    ele.requestFullscreen();
+  }
 
 window.addEventListener('keydown', e => {
   e.stopPropagation();
