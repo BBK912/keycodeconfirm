@@ -12,6 +12,7 @@
  let ele = document.getElementById('keycode');
 
 window.addEventListener('keydown', e => {
+  e.stopPropagation();
   e.preventDefault();
   let str = [];
   e.metaKey && str.push('Meta');
@@ -20,7 +21,7 @@ window.addEventListener('keydown', e => {
   e.shiftKey && str.push('Shift');
   str.push(e.key.toUpperCase());
   ele.textContent = str.join(' ');
-});
+}, true);
 </script>
 
 
