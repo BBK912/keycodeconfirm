@@ -1,0 +1,27 @@
+<html lang="en" class=""><head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+#keycode {
+  width: 200px;
+  margin: 60px auto;
+}</style></head>
+<body>
+<div id="keycode"></div>
+<script >
+ let ele = document.getElementById('keycode');
+
+window.addEventListener('keydown', e => {
+  e.preventDefault();
+  let str = [];
+  e.metaKey && str.push('Meta');
+  e.altKey && str.push('Alt');
+  e.ctrlKey && str.push('Ctrl');
+  e.shiftKey && str.push('Shift');
+  str.push(e.key.toUpperCase());
+  ele.textContent = str.join(' ');
+});
+</script>
+
+
+</body></html>
